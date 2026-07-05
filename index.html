@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verve — Shop Smarter, Live Better</title>
+  <meta name="description" content="Verve is a modern e-commerce store for electronics, fashion, footwear and home essentials — curated quality at honest prices.">
+
+  <!-- Global styles first, then component styles, then page styles, responsive last -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+  <!-- ============ PAGE LOADER ============ -->
+  <div class="page-loader" aria-hidden="true">
+    <span class="spinner spinner-dark"></span>
+  </div>
+
+  <!-- ============ SKIP LINK (accessibility) ============ -->
+  <a href="#main-content" class="sr-only">Skip to main content</a>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar">
+    <div class="container navbar-inner">
+
+      <a href="index.html" class="navbar-logo">
+        <span class="logo-mark">V</span>
+        <span class="logo-text">Verve</span>
+      </a>
+
+      <nav class="navbar-links" aria-label="Primary">
+        <a href="index.html" class="active">Home</a>
+        <a href="products.html">Products</a>
+        <a href="products.html#categories">Categories</a>
+        <a href="#wishlist">Wishlist</a>
+        <a href="orders.html">Orders</a>
+      </nav>
+
+      <div class="navbar-search" role="search">
+        <label for="navSearchInput" class="sr-only">Search products</label>
+        <input type="text" id="navSearchInput" placeholder="Search for products, brands and more...">
+        <button type="button" aria-label="Search">&#128269;</button>
+      </div>
+
+      <div class="navbar-actions">
+        <button class="icon-btn" aria-label="Wishlist" title="Wishlist">&#9825;</button>
+
+        <a href="cart.html" class="icon-btn cart-icon" aria-label="Cart" title="Cart">
+          &#128722;
+          <span class="count-bubble cart-count-bubble">0</span>
+        </a>
+
+        <div class="navbar-account">
+          <button class="icon-btn" aria-label="Account menu" title="Account" aria-haspopup="true" aria-expanded="false">&#128100;</button>
+          <div class="account-dropdown">
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+            <hr>
+            <a href="profile.html">My Profile</a>
+            <a href="orders.html">My Orders</a>
+            <hr>
+            <a href="login.html">Logout</a>
+          </div>
+        </div>
+
+        <button class="navbar-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ============ MOBILE NAV PANEL ============ -->
+    <div class="mobile-nav" id="mobileNav">
+      <div class="navbar-search" role="search">
+        <label for="mobileSearchInput" class="sr-only">Search products</label>
+        <input type="text" id="mobileSearchInput" placeholder="Search for products...">
+        <button type="button" aria-label="Search">&#128269;</button>
+      </div>
+      <nav class="mobile-nav-links" aria-label="Mobile">
+        <a href="index.html" class="active">Home</a>
+        <a href="products.html">Products</a>
+        <a href="products.html#categories">Categories</a>
+        <a href="#wishlist">Wishlist</a>
+        <a href="cart.html">Cart</a>
+        <a href="orders.html">Orders</a>
+        <a href="profile.html">Profile</a>
+        <a href="login.html">Login / Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="hero-eyebrow"><span class="dot">&#10003;</span> Trusted by 40,000+ shoppers</span>
+          <h1 class="hero-title">Everyday essentials, <span class="highlight">exceptional</span> quality.</h1>
+          <p class="hero-desc">Verve curates electronics, fashion, footwear and home goods that are built to last — with transparent pricing and a checkout that takes under a minute.</p>
+
+          <div class="hero-cta-row">
+            <a href="products.html" class="btn btn-primary">Shop the Collection</a>
+            <a href="#flash-sale" class="btn btn-secondary">View Flash Sale</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat"><b>12k+</b><span>Products</span></div>
+            <div class="hero-stat"><b>40k+</b><span>Happy customers</span></div>
+            <div class="hero-stat"><b>4.7&#9733;</b><span>Average rating</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-visual-bg"></div>
+          <div class="hero-visual-card">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=700&q=80" alt="Curated product spotlight — headphones and lifestyle accessories laid out on a light surface">
+          </div>
+          <div class="hero-floating-badge badge-top">
+            <span class="badge-icon">&#9733;</span>
+            <span>4.7 average rating</span>
+          </div>
+          <div class="hero-floating-badge badge-bottom">
+            <span class="badge-icon">&#128666;</span>
+            <span>Free shipping over &#8377;999</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CATEGORIES ============ -->
+    <section class="section" id="categories">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-eyebrow">Browse</span>
+            <h2 class="section-title">Shop by Category</h2>
+            <p class="section-subtitle">Jump straight to what you're looking for.</p>
+          </div>
+        </div>
+        <div class="category-strip" id="categoryStrip">
+          <!-- Populated by app.js -> renderHomeCategories() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED PRODUCTS ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-eyebrow">Handpicked</span>
+            <h2 class="section-title">Featured Products</h2>
+            <p class="section-subtitle">A close look at what's trending right now.</p>
+          </div>
+          <a href="products.html" class="view-all-link">View all &#8594;</a>
+        </div>
+        <div class="product-grid" id="featuredProductsGrid">
+          <!-- Populated by app.js -> renderHomeProductRail() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ BEST SELLERS ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-eyebrow">Crowd favorites</span>
+            <h2 class="section-title">Best Sellers</h2>
+            <p class="section-subtitle">The products people keep coming back for.</p>
+          </div>
+          <a href="products.html" class="view-all-link">View all &#8594;</a>
+        </div>
+        <div class="product-grid" id="bestSellerProductsGrid">
+          <!-- Populated by app.js -> renderHomeProductRail() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FLASH SALE (signature section) ============ -->
+    <section class="section" id="flash-sale">
+      <div class="container">
+        <div class="flash-sale">
+          <div class="flash-sale-content">
+            <div class="flash-sale-heading">
+              <span class="section-eyebrow">Ends soon</span>
+              <h2>&#9889; Flash Sale — Up to 50% Off</h2>
+            </div>
+            <div class="flash-sale-timer" id="flashSaleTimer">
+              <div class="timer-box"><b data-unit="hours">06</b><span>Hours</span></div>
+              <div class="timer-box"><b data-unit="minutes">00</b><span>Mins</span></div>
+              <div class="timer-box"><b data-unit="seconds">00</b><span>Secs</span></div>
+            </div>
+          </div>
+          <div class="flash-sale-grid" id="flashSaleGrid">
+            <!-- Populated by app.js -> renderFlashSale() -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-eyebrow">Reviews</span>
+            <h2 class="section-title">What Shoppers Are Saying</h2>
+          </div>
+        </div>
+        <div class="testimonial-grid" id="testimonialGrid">
+          <!-- Populated by app.js -> renderTestimonials() -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ NEWSLETTER ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="newsletter-section">
+          <div class="newsletter-section-content">
+            <h2>Get the best deals in your inbox</h2>
+            <p>Sign up for weekly drops, restocks, and members-only discount codes. No spam, unsubscribe anytime.</p>
+            <form class="newsletter-form">
+              <label for="newsletterEmail" class="sr-only">Email address</label>
+              <input type="email" id="newsletterEmail" placeholder="you@example.com" required>
+              <button type="submit" class="btn btn-primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="navbar-logo">
+            <span class="logo-mark">V</span>
+            <span class="logo-text">Verve</span>
+          </a>
+          <p>Curated everyday essentials — electronics, fashion, footwear and home goods — with transparent pricing and reliable delivery.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook">f</a>
+            <a href="#" aria-label="Instagram">&#128247;</a>
+            <a href="#" aria-label="Twitter / X">&#120143;</a>
+            <a href="#" aria-label="YouTube">&#9654;</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>About</h4>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Press</a></li>
+            <li><a href="#">Sustainability</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col-categories">
+          <h4>Categories</h4>
+          <ul>
+            <li><a href="products.html?category=Electronics">Electronics</a></li>
+            <li><a href="products.html?category=Fashion">Fashion</a></li>
+            <li><a href="products.html?category=Footwear">Footwear</a></li>
+            <li><a href="products.html?category=Home">Home</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-newsletter">
+          <h4>Stay in the loop</h4>
+          <p>Weekly deals and new arrivals, straight to your inbox.</p>
+          <form class="footer-newsletter-form">
+            <label for="footerEmail" class="sr-only">Email address</label>
+            <input type="email" id="footerEmail" placeholder="you@example.com" required>
+            <button type="submit">Join</button>
+          </form>
+          <div class="footer-payment-icons">
+            <span>UPI</span>
+            <span>VISA</span>
+            <span>Mastercard</span>
+            <span>COD</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Verve. All rights reserved. Built for CodeAlpha Full Stack Development Internship.</span>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms &amp; Conditions</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <!-- utils.js and cart.js must load before app.js / search.js, which depend on them -->
+  <script src="utils.js"></script>
+  <script src="cart.js"></script>
+  <script src="search.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
